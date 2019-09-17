@@ -126,7 +126,7 @@ ul li:hover {
 
 /*Making it Mobile Responsive*/
 /*Found help from this tutorial: https://www.youtube.com/watch?v=2KL-z9A56SQ */
-@media(min-width:600px) {
+@media(min-width:750px) {
   .the-header{
     font-size: 2.5rem;
     padding: 30px 42px;
@@ -156,7 +156,7 @@ ul li:hover {
   }
 }
 
-@media (min-width:600px) {
+@media (min-width:750px) {
   #the-input {
     width: 75%;
     padding: 10px;
