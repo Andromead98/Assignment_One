@@ -74,7 +74,7 @@ ul {
 
 ul li {
   position: relative;
-  background-color: #cecece;
+  background-color: #E9D0A6;
   list-style-type: none;
   cursor: pointer;
   padding: 10px 6px 10px 30px;
@@ -87,11 +87,11 @@ ul li {
 }
 
 ul li:nth-child(odd){
-  background-color: #f6f9f3;
+  background-color: #F5DBAF;
 }
 
 ul li.checked{
-  background: #282828;
+  background: #9F8A67;
   color: white;
   text-decoration: line-through;
 }
@@ -110,7 +110,7 @@ ul li.checked::before{
 }
 
 ul li:hover {
-  background-color: #ddd;
+  background-color: #C8B28D;
 }
 
 .close {
@@ -122,4 +122,65 @@ ul li:hover {
 
 .close:hover{
   background: #f43c2f;
+}
+
+/*Making it Mobile Responsive*/
+/*Found help from this tutorial: https://www.youtube.com/watch?v=2KL-z9A56SQ */
+@media(min-width:600px) {
+  .the-header{
+    font-size: 2.5rem;
+    padding: 30px 42px;
+    text-align: center;
+    padding-bottom: 50px;
+
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul li {
+    font-size: 40px;
+    position: relative;
+    background-color: #E9D0A6;
+    list-style-type: none;
+    cursor: pointer;
+    padding: 10px 6px 10px 30px;
+    padding-left: 45px;
+    transition: 0.3s;
+    /* making list unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+@media (min-width:600px) {
+  #the-input {
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 35px;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  }
+
+  .create-button{
+    padding: 10px;
+    background-color: #E3C79F;
+    font-size: 35px;
+    width: 25%;
+    color:  #000000;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+  }
 }
