@@ -1,0 +1,125 @@
+create-button/*
+webkit stuff:https://developer.mozilla.org/en-US/docs/Web/CSS/WebKit_Extensions
+             https://developer.mozilla.org/en-US/docs/Web/CSS/user-select
+html, css and java script learnt from: https://www.youtube.com/watch?v=K3jb8_pPlRQ&t=12s
+*/
+
+
+/*overall stylings*/
+body {
+  margin: 0;
+  min-width: 300px;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*Making it Mobile Responsive*/
+
+
+/*Header Stylings*/
+
+.the-header{
+  background-color: #FFF4B4;
+  padding: 30px 42px;
+  color: black;
+  text-align: center;
+}
+
+.the-header:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#the-input {
+  width: 85%;
+  padding: 10px;
+  float: left;
+  font-size: 15px;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+
+.create-button{
+  padding: 10px;
+  background-color: #E3C79F;
+  font-size: 15px;
+  width: 15%;
+  color:  #000000;
+  float: left;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.create-button:hover{
+  background-color: #C5AD8B;
+}
+
+/*List Stylings*/
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  position: relative;
+  background-color: #cecece;
+  list-style-type: none;
+  cursor: pointer;
+  padding: 10px 6px 10px 30px;
+  transition: 0.3s;
+  /* making list unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+ul li:nth-child(odd){
+  background-color: #f6f9f3;
+}
+
+ul li.checked{
+  background: #282828;
+  color: white;
+  text-decoration: line-through;
+}
+
+ul li.checked::before{
+  content: '';
+  position: absolute;
+  border-color: white;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 15px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 10px
+}
+
+ul li:hover {
+  background-color: #ddd;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px 15px 10px 15px;
+}
+
+.close:hover{
+  background: #f43c2f;
+}
