@@ -4,20 +4,50 @@
     <meta charset="utf-8">
     <title>Check List</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <script  defer src="script.js"></script>
   </head>
   <body>
+
     <div class="container">
       <div class="the-header" id="the-header">
+        <div id="list-of-lists">
+          <span class="slide">
+            <a href="#" onclick="openSlideMenu()">
+              <i class="fas fa-bars"></i>
+            </a>
+          </span>
+
+          <div id="menu" class="nav">
+            <a href="#" class="closenav" onclick="closeSlideMenu()">
+              <i class="fas fa-times blackiconcolor" id="bars"></i>
+            </a>
+            <div class="navsideTitle">
+              <p>My Lists</p>
+            </div>
+          <ul class="myOtherLists" data-lists>
+            <li id="otherListItems" class="active">HIT238: Asssignment One</li>
+            <li id="otherListItems">Grocery List</li>
+          </ul>
+        </div>
+      </div>
+
+
         <h1>My Check List App</h1>
+        <input type="text" id="the-new-list-input" placeholder="Create a new list here...">
+        <span onclick="createNewList()" class="create-list-button">Create List</span>
+        <div class="empty_space"></div>
+
+        <h2 class="List Name"> HIT238: Assignment One</h2>
         <input type="text" id="the-input" placeholder="Write your tasks here...">
         <span onclick="createNewElement()" class="create-button">Create Task</span>
       </div>
 
+
       <ul id="the-ul">
-        <li>Complete Sprint One</li>
-        <li>Learn to make a list</li>
-        <li>Hand in Assignment One</li>
+        <li id="the-li">Complete Sprint One</li>
+        <li id="the-li">Learn to make a list</li>
+        <li id="the-li">Hand in Assignment One</li>
       </ul>
 
 

@@ -1,4 +1,23 @@
+//adding new lists & local storage
+//https://www.youtube.com/watch?v=W7FaYfuwu70&t=830s
+const ListsContainer = document.querySelector('[data-lists]')
 
+var lists = []
+
+
+
+
+
+//hamburger Menu
+function openSlideMenu(){
+  document.getElementById('menu').style.width = '400px';
+  document.getElementById('list-of-lists').style.marginLeft ='400px';
+}
+
+function closeSlideMenu(){
+  document.getElementById('menu').style.width = '0';
+  document.getElementById('list-of-lists').style.marginLeft ='0';
+}
 
 //list tag stuff
 var myList = document.getElementsByTagName('li');
