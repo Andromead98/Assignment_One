@@ -1,12 +1,3 @@
-//adding new lists & local storage
-//https://www.youtube.com/watch?v=W7FaYfuwu70&t=830s
-const ListsContainer = document.querySelector('[data-lists]')
-
-var lists = []
-
-
-
-
 
 //hamburger Menu
 function openSlideMenu(){
@@ -18,6 +9,52 @@ function closeSlideMenu(){
   document.getElementById('menu').style.width = '0';
   document.getElementById('list-of-lists').style.marginLeft ='0';
 }
+
+//adding new lists & local storage
+//https://www.youtube.com/watch?v=W7FaYfuwu70&t=830s
+const listsContainer = document.querySelector('[data-lists]')
+const newListForm = document.querySelector('[data-new-list-form]')
+const newListInput = document.querySelector('[data-new-list-input]')
+
+let lists =[{
+  id: 1,
+  name: 'name'
+}, {
+  id: 2,
+  name:'todo'
+}]
+
+newListForm.addEventListener('submit', event =>{
+  event.preventDefault()
+  const listName = newListInput.value
+  if (listName == null || listName ==='') return
+  const list =createList(listName)
+  newListInput.value = null
+})
+
+//function createList(name){
+  //{id: Date.now().toString(), name: name, tasks:[]}
+//}
+
+function render(){
+  clearElement(listsContainer)
+  lists.forEach(list =>{
+    const ListElement = document.createElement('li')
+    listElement.dataset.listId = list.id
+    ListElement.classList.add("otherLists")
+    ListElement.innerText = list.name
+    listsContainer.appendChild(ListElement)
+  })
+}
+
+function clearElement(){
+  while(element.firstChild){
+    element.removeChild(element.firstChild)
+  }
+
+}
+
+render()
 
 //list tag stuff
 var myList = document.getElementsByTagName('li');
@@ -77,3 +114,5 @@ function createNewElement(){
         }
     }
 }
+
+//create new lists
