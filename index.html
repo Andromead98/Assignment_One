@@ -13,13 +13,13 @@
       <div class="the-header" id="the-header">
         <div id="list-of-lists">
           <span class="slide">
-            <a href="#" onclick="openSlideMenu()">
+            <a href="#" class="SlideMenuOpen">
               <i class="fas fa-bars"></i>
             </a>
           </span>
 
           <div id="menu" class="nav">
-            <a href="#" class="closenav" onclick="closeSlideMenu()">
+            <a href="#" class="SlideMenuClose">
               <i class="fas fa-times blackiconcolor" id="bars"></i>
             </a>
             <div class="navsideTitle">
@@ -34,10 +34,6 @@
 
 
         <h1>My Check List App</h1>
-        <input type="text" id="the-new-list-input" placeholder="Create a new list here...">
-        <span onclick="createNewList()" class="create-list-button">Create List</span>
-        <div class="empty_space"></div>
-
         <h2 class="List Name"> HIT238: Assignment One</h2>
         <input type="text" id="the-input" placeholder="Write your tasks here...">
         <span class="create-button">Create Task</span>

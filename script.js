@@ -1,3 +1,25 @@
+//indexedDB?
+//https://www.youtube.com/watch?v=vb7fkBeblcw
+//
+window.indexedDB = window.indexedDB || window.mozIndexDB || window.webkitIndexedDB || window.msIndexedDB;
+/* if (!window.indexedDB) {
+  alert();
+} */
+
+const request = indexedDB.open("tasks-lists");
+
+request.onupgradeneeded = e => {
+  alert("upgrade is called")
+}
+
+request.onsuccess = e => {
+  alert("success is called")
+}
+
+request.onerror = e => {
+  alert("error")
+}
+
 //adding new lists & local storage
 //https://www.youtube.com/watch?v=W7FaYfuwu70&t=830s
 const ListsContainer = document.querySelector('[data-lists]')
@@ -5,9 +27,19 @@ const ListsContainer = document.querySelector('[data-lists]')
 
 
 //hamburger Menu
+const OpenMenu = document.getElementsByClassName('SlideMenuOpen');
+for (i=0; i<OpenMenu.length; i++) {
+  OpenMenu[i].addEventListener('click', openSlideMenu);
+}
+
 function openSlideMenu(){
   document.getElementById('menu').style.width = '400px';
   document.getElementById('list-of-lists').style.marginLeft ='400px';
+}
+
+const CloseMenu = document.getElementsByClassName('SlideMenuClose');
+for (i=0; i<CloseMenu.length; i++){
+  CloseMenu[i].addEventListener('click', closeSlideMenu);
 }
 
 function closeSlideMenu(){
@@ -30,11 +62,12 @@ for (index = 0; index < myList.length; index++){
 var closeButton = document.getElementsByClassName("close");
 
 for (i = 0; i < closeButton.length; i++){
-  closeButton[i].onclick = function(){
+  closeButton[i].addEventListener('click', function(){
     var theDiv = this.parentElement;
     theDiv.style.display = "none";
-  }
+  })
 }
+
 //
 var ulList = document.querySelector('ul');
 ulList.addEventListener('click', function(event){
@@ -46,8 +79,9 @@ ulList.addEventListener('click', function(event){
 
 //
 const CreateTask = document.getElementsByClassName('create-button');
-for (i=0; i<CreateTask.length; i++)
-  CreateTask[i].onclick= createNewElement;
+for (i=0; i<CreateTask.length; i++){
+  CreateTask[i].addEventListener('click', createNewElement)
+}
 
 
 function createNewElement(){
@@ -71,9 +105,10 @@ function createNewElement(){
   li.appendChild(thePanTag);
 
   for (i = 0; i < closeButton.length; i++){
-        closeButton[i].onclick = function(){
-            var theDiv = this.parentElement;
-            theDiv.style.display = "none";
-        }
-    }
+    console.log()
+    closeButton[i].addEventListener('click', function(){
+      var theDiv = this.parentElement;
+      theDiv.style.display = "none";
+    })
+  }
 }
