@@ -4,7 +4,7 @@ for (i=0; i<CreateTask.length; i++){
 }
 
 
-function createNewElement(){
+/*function createNewElement(){
   var li = document.createElement('li');
   var theInputValue = document.getElementById("the-input").value;
   var textNode = document.createTextNode(theInputValue);
@@ -31,4 +31,4 @@ function createNewElement(){
       theDiv.style.display = "none";
     })
   }
-}
+}*/
