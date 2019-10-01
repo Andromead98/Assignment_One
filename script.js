@@ -36,11 +36,17 @@ function appendTask(event){
 
 submit.addEventListener('click', appendTask, false);
 
-const saved = localStorage.getItem('taskItems');
+let saved = localStorage.getItem('taskItems');
 console.log('it worked');
 
-if (saved) {
-  taskList.innerHTML = saved;
+if (!saved) {
+  // taskList.innerHTML = saved;
+  const data = { tasks : taskList.innerHTML }
+  localStorage.setItem('tasksItems',data);
+} else {
+  const data = JSON.parse(saved);
+  saved.push(taskList.innerHTML);
+  localStorage.setItem('taskItems', data);
 }
 
 // removing items from local storage
