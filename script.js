@@ -1,6 +1,7 @@
 // adding items local storage
 //https://www.youtube.com/watch?v=T9GWHFDcELQ
 //https://www.youtube.com/watch?v=AfVUiQ-my4Q
+// asked a question on stacked overflow, can be viewed here: https://stackoverflow.com/questions/58166237/how-to-remove-single-value-from-localstorage-that-has-same-key-as-another-value/58177805?noredirect=1#comment102736477_58177805
 
 const submit = document.querySelector('.create-button');
 const taskList = document.querySelector('.the-ul-list');
@@ -68,8 +69,28 @@ submit.addEventListener('click', appendTask, false);
 //calls the previous function
 loadDataList();
 
-
 // removing items from local storage
+function removeTask(){
+  //call data
+  const dataList = JSON.parse(localStorage.getItem('taskItems'));
+  //check if array is being pulled
+  console.log(dataList);
+  //click event to remove item from Array
+
+  /*
+  //this code removes the task from the list, but not the array.
+  var closeButton = document.getElementsByClassName("close");
+
+  for (i = 0; i < closeButton.length; i++){
+    closeButton[i].addEventListener('click', function(){
+      var theDiv = this.parentElement;
+      theDiv.style.display = "none";
+    })
+  }
+  */
+}
+
+
 
 //text decoration
 var ulList = document.querySelector('ul');
