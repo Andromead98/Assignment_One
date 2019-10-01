@@ -76,6 +76,8 @@ function removeTask(){
   //check if array is being pulled
   console.log(dataList);
   //click event to remove item from Array
+  // looked at this: https://stackoverflow.com/questions/36888969/how-to-delete-an-array-element-stored-in-local-storage
+  // and this: https://developer.mozilla.org/en-US/docs/Web/API/Storage/removeItem
   var closeButton = document.getElementsByClassName("close");
   for (i = 0; i < closeButton.length; i++){
     closeButton[i].addEventListener('click', function(){
@@ -83,7 +85,7 @@ function removeTask(){
       theDiv.style.display = "none";
       //hopefully this removes the item from the array
       dataList.removeItem('[i]');
-      
+
 
     })
   }
