@@ -76,9 +76,23 @@ function removeTask(){
   //check if array is being pulled
   console.log(dataList);
   //click event to remove item from Array
+  var closeButton = document.getElementsByClassName("close");
+  for (i = 0; i < closeButton.length; i++){
+    closeButton[i].addEventListener('click', function(){
+      var theDiv = this.parentElement;
+      theDiv.style.display = "none";
+      //hopefully this removes the item from the array
+      dataList.removeItem('[i]');
+      
+
+    })
+  }
+
 
   /*
   //this code removes the task from the list, but not the array.
+  //need to add something that removes item from array
+  //
   var closeButton = document.getElementsByClassName("close");
 
   for (i = 0; i < closeButton.length; i++){
@@ -87,6 +101,8 @@ function removeTask(){
       theDiv.style.display = "none";
     })
   }
+
+
   */
 }
 
