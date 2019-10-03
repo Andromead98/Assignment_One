@@ -15,7 +15,7 @@ const taskInput = document.querySelector('.the-input-class');
 function displayTask(data){
   taskList.insertAdjacentHTML("beforeend", `
   <ul id="the-ul" class="the-ul-list">
-    <li id="the-li" class="task">${data.task}<span class ="close">x</span></li>
+    <li id="the-li" class="task">${data.task}<span class ="close"></span></li>
   </ul>`);
 
 }
@@ -70,7 +70,13 @@ submit.addEventListener('click', appendTask, false);
 loadDataList();
 
 // removing items from local storage
-function removeTask(){
+//https://stackoverflow.com/questions/33357900/remove-an-element-from-array-with-user-input
+//https://salesforce.stackexchange.com/questions/144941/how-to-remove-item-from-localstorage
+var remove = function(removeTask){
+
+}
+
+/*function removeTask(){
   //call data
   const dataList = JSON.parse(localStorage.getItem('taskItems'));
   //check if array is being pulled
@@ -84,14 +90,10 @@ function removeTask(){
       var theDiv = this.parentElement;
       theDiv.style.display = "none";
       //hopefully this removes the item from the array
-      dataList.removeItem('[i]');
-
 
     })
   }
 
-
-  /*
   //this code removes the task from the list, but not the array.
   //need to add something that removes item from array
   //
