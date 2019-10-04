@@ -17,7 +17,6 @@ function displayTask(data){
   <ul id="the-ul" class="the-ul-list">
     <li id="the-li" class="task">${data.task}<span class ="close"></span></li>
   </ul>`);
-
 }
 
 /**
@@ -72,8 +71,23 @@ loadDataList();
 // removing items from local storage
 //https://stackoverflow.com/questions/33357900/remove-an-element-from-array-with-user-input
 //https://salesforce.stackexchange.com/questions/144941/how-to-remove-item-from-localstorage
-var remove = function(removeTask){
+//call data
+const dataList = JSON.parse(localStorage.getItem('taskItems'));
+//check if data is there
+console.log(dataList);
+//
+var removeTaskFromStorage = function(){
+  var removeTaskItem = dataList.indexOf(removeTask);
+  if (removeTaskItem > -1){
+    dataList.splice(index, 1);
+    
+  }
+}
 
+/* dataList.indexOf('{!task.ID}');
+if (removeTask > -1){
+  dataList.splice(removeTask, 1);
+  localStorage['Tasks'] = ;
 }
 
 /*function removeTask(){
@@ -107,9 +121,9 @@ var remove = function(removeTask){
   }
 
 
-  */
-}
 
+}
+*/
 
 
 //text decoration
