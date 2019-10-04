@@ -1,3 +1,4 @@
+/*
 var myList = document.getElementsByTagName('li');
 var index;
 for (index = 0; index < myList.length; index++){
@@ -7,7 +8,8 @@ for (index = 0; index < myList.length; index++){
   aSpanTag.appendChild(someTxt);
   myList[index].appendChild(aSpanTag);
 }
-
+*/
+/*
 var closeButton = document.getElementsByClassName("close");
 
 for (i = 0; i < closeButton.length; i++){
@@ -16,3 +18,4 @@ for (i = 0; i < closeButton.length; i++){
     theDiv.style.display = "none";
   })
 }
+*/

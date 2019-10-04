@@ -13,10 +13,20 @@ const taskInput = document.querySelector('.the-input-class');
 * @param {String} data.task The task text to display
 **/
 function displayTask(data){
+  const task = data.task;
+  // fudge the id with a semi-unique value. This should be properly set when the task is saveds
+  const id = data.task.replace(/\W/g, '')
+
   taskList.insertAdjacentHTML("beforeend", `
-  <ul id="the-ul" class="the-ul-list">
-    <li id="the-li" class="task">${data.task}<span class ="close"></span></li>
-  </ul>`);
+    <li id="task${id}" data-task=${id} class="task"><span>${data.task}</span><button class="close" id="btn${id}">x</button></li>
+  `);
+
+  const closeBtn = document.querySelector(`#task${id} button`);
+  console.log('closebtn', closeBtn);
+
+  closeBtn.addEventListener('click', (evt) => removeTaskFromStorage(evt));
+//  closeBtn.addEventListener('click', removeTaskFromStorage);
+
 }
 
 /**
@@ -68,22 +78,54 @@ submit.addEventListener('click', appendTask, false);
 //calls the previous function
 loadDataList();
 
+/* Artifact from earlier button creation. DELETE ME
+var myList = document.getElementsByTagName('li');
+var index;
+for (index = 0; index < myList.length; index++){
+}
+*/
+/*
 // removing items from local storage
 //https://stackoverflow.com/questions/33357900/remove-an-element-from-array-with-user-input
 //https://salesforce.stackexchange.com/questions/144941/how-to-remove-item-from-localstorage
-//call data
-const dataList = JSON.parse(localStorage.getItem('taskItems'));
-//check if data is there
-console.log(dataList);
+//close button code
+var closeButton = document.getElementsByClassName("close");
+for (i = 0; i < closeButton.length; i++){
+  console.log('Iterate', i);
+  console.log('Close button', closeButton[i]);
+  closeButton[i].addEventListener('click', function(evt) {
+    console.log('index', i);
+    const target = evt.target;
+    var theDiv = target.parentElement;
+    theDiv.style.display = "none";
+    removeTaskFromStorage(removeTask);
+  });
+}
+*/
+
+//const dataList = JSON.parse(localStorage.getItem('taskItems'));
+//console.log(dataList);
 //
-var removeTaskFromStorage = function(){
-  var removeTaskItem = dataList.indexOf(removeTask);
-  if (removeTaskItem > -1){
-    dataList.splice(index, 1);
-    
+var removeTaskFromStorage = function(evt){
+  evt.preventDefault();
+  const clicked = evt.target;
+  const id = clicked.parentNode.dataset.task;
+  if(!id) {
+    console.error('Unable to identify task to remove');
+    return;
+  }
+
+  const dataList = JSON.parse(localStorage.getItem('taskItems'));
+  var removeTaskIndex = dataList.findIndex((task) => task.task.replace(/\W/g === id));
+  if (removeTaskIndex > -1){
+    dataList.splice(removeTaskIndex, 1);
+    // update in localstorage
+    // set item to json sring of dataList
+    localStorage.setItem('taskItems',JSON.stringify(dataList));
+    // update the display items
+    loadDataList()
   }
 }
-
 /* dataList.indexOf('{!task.ID}');
 if (removeTask > -1){
   dataList.splice(removeTask, 1);
@@ -98,15 +140,6 @@ if (removeTask > -1){
   //click event to remove item from Array
   // looked at this: https://stackoverflow.com/questions/36888969/how-to-delete-an-array-element-stored-in-local-storage
   // and this: https://developer.mozilla.org/en-US/docs/Web/API/Storage/removeItem
-  var closeButton = document.getElementsByClassName("close");
-  for (i = 0; i < closeButton.length; i++){
-    closeButton[i].addEventListener('click', function(){
-      var theDiv = this.parentElement;
-      theDiv.style.display = "none";
-      //hopefully this removes the item from the array
-
-    })
-  }
 
   //this code removes the task from the list, but not the array.
   //need to add something that removes item from array
@@ -127,6 +160,7 @@ if (removeTask > -1){
 
 
 //text decoration
+/*
 var ulList = document.querySelector('ul');
 ulList.addEventListener('click', function(event){
   console.log(event);
@@ -134,3 +168,4 @@ ulList.addEventListener('click', function(event){
     event.target.classList.toggle('checked');
   }
 }, false);
+*/
