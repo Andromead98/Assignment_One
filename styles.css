@@ -10,13 +10,12 @@ body {
   margin: 0;
   min-width: 300px;
   overflow-x: hidden;
-
+  transition: 0.5s;
 }
 
 * {
   box-sizing: border-box;
 }
-
 
 /*Header Styles*/
 
@@ -25,97 +24,14 @@ body {
   padding: 30px 42px;
   color: black;
   text-align: center;
+  transition: 0.5s;
 }
 
 .the-header:after{
   content: "";
   display: table;
   clear: both;
-}
-
-/* Hamburger Menu*/
-/*Resources: https://www.youtube.com/watch?v=F0uED-w9E48&t=727s */
-.nav{
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #E2C699;
-  overflow-x: hidden;
-  padding-top: 60px;
-  transition: .7s;
-}
-
-#otherListItems{
-  text-align: left;
-  font-size: 25px;
-}
-
-#otherListItems.active{
-  text-align: left;
-  font-size: 25px;
-  font-weight: 800;
-}
-
-.closenav{
-  font-size: 40px;
-  color: #FF4C4C;
-  text-align: left;
-  position: absolute;
-  top: 8px;
-  right: 22px;
-}
-
-.slide{
-  font-size: 40px;
-  text-align: left;
-  position: absolute;
-  top: 8px;
-  left: 22px;
-}
-
-#list-of-lists{
-  padding: 20px;
-  transition: marginLeft .7s;
-}
-
-/* New List Maker*/
-.empty_space{
-  padding-top: 10px;
-  padding-bottom: 40px;
-}
-
-#the-new-list-input {
-  width: 85%;
-  padding: 10px;
-  float: left;
-  font-size: 15px;
-  margin: 0;
-  border: none;
-  border-radius: 0;
-}
-
-.create-list-button{
-  padding: 10px;
-  background-color: #E3C79F;
-  font-size: 15px;
-  width: 15%;
-  color:  #000000;
-  float: left;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 0;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.create-list-button:hover{
-  background-color: #C5AD8B;
+  transition: 0.5s;
 }
 
 /* Input Styles */
@@ -128,6 +44,7 @@ body {
   margin: 0;
   border: none;
   border-radius: 0;
+  transition: 0.5s;
 }
 
 .create-button{
@@ -145,10 +62,12 @@ body {
   -ms-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
+  transition: 0.5s;
 }
 
 .create-button:hover{
   background-color: #C5AD8B;
+  transition: 0.5s;
 }
 
 /*List Stylings*/
@@ -170,16 +89,19 @@ ul {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  transition: 0.5s;
 }
 
 #the-li:nth-child(odd){
   background-color: #F5DBAF;
+  transition: 0.5s;
 }
 
 .checked{
   background: #9F8A67;
   color: white;
   text-decoration: line-through;
+  transition: 0.5s;
 }
 
 .checked::before{
@@ -193,10 +115,12 @@ ul {
   transform: rotate(45deg);
   height: 15px;
   width: 10px
+  transition: 0.5s;
 }
 
 #the-li:hover {
   background-color: #C8B28D;
+  transition: 0.5s;
 }
 
 .close {
@@ -204,10 +128,74 @@ ul {
   right: 0;
   top: 0;
   padding: 10px 15px 10px 15px;
+  transition: 0.5s;
 }
 
 .close:hover{
   background: #f43c2f;
+  transition: 0.5s;
+}
+
+/*Night Mode styles*/
+.toggle{
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  background: #fff;
+  border: 2px solid #00151f;
+  width: 87px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+.toggle::before{
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 30px;
+  height: 30px;
+  background: #000000;
+  border-radius: 50px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.toggle.active::before{
+  left: 51px;
+}
+
+body.night{
+  background: #00151f;
+  transition: 0.5s;
+}
+
+.the-header.night{
+  background-color: #000b4b;
+  color: white;
+  transition: 0.5s;
+}
+.create-button.night{
+  background-color: #1c3860;
+  color: white;
+}
+
+.task-item.night{
+  transition: 0.5s;
+  background-color: #162f59;
+  color: white;
+}
+
+.task-item.night:nth-child(odd){
+  transition: 0.5s;
+  background-color: #0a2450;
+  color: white;
+}
+
+.close.night{
+  color: white;
 }
 
 /*Making it Mobile Responsive*/

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
+<!--
+Night Mode button tutorial found here: https://www.youtube.com/watch?v=PPhCJewgI4Y
+-->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Check List</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script> -->
+    <script defer src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script  defer src="script.js"></script>
     <script  defer src="hamburgerMenu.js"></script>
     <script  defer src="createTasks.js"></script>
@@ -14,27 +17,23 @@
 
     <div class="container">
       <div class="the-header" id="the-header">
-        <div id="list-of-lists">
-          <!-- <span class="slide">
-            <a href="#" class="SlideMenuOpen">
-              <i class="fas fa-bars"></i>
-            </a>
-          </span> -->
+        <div class="toggle"></div>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script type="text/javascript">
+          $(document).ready(function(){
+            $('.toggle').click(function(){
+              $('.toggle').toggleClass('active')
+              $('body').toggleClass('night')
+              $('.the-header').toggleClass('night')
+              $('h1').toggleClass('night')
+              $('.create-button').toggleClass('night')
+              $('.the-ul-list').toggleClass('night')
+              $('.task-item').toggleClass('night')
+              $('.close').toggleClass('night')
+            })
+          })
 
-          <!-- <div id="menu" class="nav">
-            <a href="#" class="SlideMenuClose">
-              <i class="fas fa-times blackiconcolor" id="bars"></i>
-            </a>
-            <div class="navsideTitle">
-              <p>My Lists</p>
-            </div>
-          <ul class="myOtherLists" data-lists>
-            <li id="otherListItems" class="active">HIT238: Asssignment One</li>
-            <li id="otherListItems">Grocery List</li>
-          </ul>
-        </div> -->
-      </div>
-
+        </script>
 
         <h1>My Check List App</h1>
         <input type="text" id="the-input" class="the-input-class" placeholder="Write your tasks here...">
@@ -43,9 +42,6 @@
 
 
       <ul id="the-ul" class="the-ul-list">
-      <!--  <li id="the-li" class="task">Complete Sprint One</li>
-        <li id="the-li" class="task">Learn to make a list</li>
-        <li id="the-li" class="task">Hand in Assignment One</li> -->
       </ul>
 
 
