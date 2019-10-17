@@ -124,6 +124,7 @@ var removeTaskFromStorage = function(evt){
     localStorage.setItem('taskItems',JSON.stringify(dataList));
     // update the display items
     loadDataList()
+    location.reload();
   }
 }
 /* dataList.indexOf('{!task.ID}');
@@ -160,7 +161,6 @@ if (removeTask > -1){
 
 
 //text decoration
-/*
 var ulList = document.querySelector('ul');
 ulList.addEventListener('click', function(event){
   console.log(event);
@@ -168,4 +168,3 @@ ulList.addEventListener('click', function(event){
     event.target.classList.toggle('checked');
   }
 }, false);
-*/

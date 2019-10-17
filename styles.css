@@ -176,13 +176,13 @@ ul {
   background-color: #F5DBAF;
 }
 
-#the-li.checked{
+.checked{
   background: #9F8A67;
   color: white;
   text-decoration: line-through;
 }
 
-#the-li.checked::before{
+.checked::before{
   content: '';
   position: absolute;
   border-color: white;
@@ -299,5 +299,13 @@ ul {
 
   .create-list-button:hover{
     background-color: #C5AD8B;
+  }
+
+  .close{
+    padding: 15px 20px 17px 20px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    text-align: center;
   }
 }
